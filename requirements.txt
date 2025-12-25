@@ -23,6 +23,7 @@ xgboost==1.6.2
 neuro-mf==0.0.5
 boto3==1.26.105
 Werkzeug==2.2.2
- -e.
+openai>=1.0.0
+ #-e.
 #Hm yaha s setup.py file ko bhi trigger kr skte h  -e. likh do 
 

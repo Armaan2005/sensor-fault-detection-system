@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5e7eb;
+}
+
+/* Page wrapper */
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main Card */
+.card {
+  width: 420px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.header p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* Upload area */
+.upload-area {
+  display: block;
+  border: 2px dashed rgba(148, 163, 184, 0.4);
+  border-radius: 14px;
+  padding: 26px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.upload-area:hover {
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.upload-area input {
+  display: none;
+}
+
+.upload-content {
+  text-align: center;
+}
+
+.upload-content .icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.upload-content .text {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.upload-content .subtext {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #020617;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(99,102,241,0.35);
+}
+
+/* Footer */
+.footer {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 11px;
+  color: #64748b;
+}
+.ai-section {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.85);
+}
+
+.ai-section h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #e5e7eb;
+}
+
+.ai-section textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  resize: none;
+  margin-bottom: 12px;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.ai-section button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: #020617;
+}
+
+#ai-answer {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #cbd5f5;
+  white-space: pre-wrap;
+}
+
+.dashboard-container {
+  padding: 30px;
+  color: #e5e7eb;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  font-size: 26px;
+}
+
+.dashboard-header p {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-card h3 {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.stat-card p {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.stat-card.good {
+  border-left: 4px solid #22c55e;
+}
+
+.stat-card.bad {
+  border-left: 4px solid #ef4444;
+}
+
+.charts-section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.chart-card {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 14px;
+  padding: 20px;
+}
+/* Risk Indicator */
+.risk-bar {
+  width: 100%;
+  height: 12px;
+  background: #1f2937;
+  border-radius: 8px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+#risk-fill {
+  height: 100%;
+  width: 0%;
+  transition: width 0.8s ease;
+  background: linear-gradient(90deg, #22c55e, #facc15, #ef4444);
+}
+
+#risk-text {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+

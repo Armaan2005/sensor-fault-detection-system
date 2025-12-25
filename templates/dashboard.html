@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ML Monitoring Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+  <!-- Header -->
+  <header class="dashboard-header">
+    <h1>Wafer Fault Detection Dashboard</h1>
+    <p>Real-time ML Monitoring & Insights</p>
+  </header>
+
+  <!-- Top Stats -->
+  <section class="stats-grid">
+
+    <div class="stat-card">
+      <h3>Model</h3>
+      <p id="model-name">RandomForestClassifier</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Total Predictions</h3>
+      <p id="total-predictions">--</p>
+    </div>
+
+    <div class="stat-card good">
+      <h3>Good Wafers</h3>
+      <p id="good-count">--</p>
+    </div>
+
+    <div class="stat-card bad">
+      <h3>Bad Wafers</h3>
+      <p id="bad-count">--</p>
+    </div>
+
+  </section>
+
+  <!-- Charts Section -->
+  <section class="charts-section">
+
+    <div class="chart-card">
+      <h3>Prediction Distribution</h3>
+      <canvas id="predictionChart"></canvas>
+    </div>
+
+  </section>
+  <!-- Advanced Insights Section -->
+<section class="charts-section">
+
+  <div class="chart-card">
+    <h3>Quality Health Score</h3>
+    <p id="health-score" style="font-size:32px;font-weight:600">--</p>
+    <div class="risk-bar">
+      <div id="risk-fill"></div>
+    </div>
+    <p id="risk-text"></p>
+  </div>
+
+  <div class="chart-card">
+    <h3>Good vs Bad Percentage</h3>
+    <canvas id="donutChart"></canvas>
+  </div>
+
+  <div class="chart-card">
+    <h3>Bad Wafer Trend (Recent Batches)</h3>
+    <canvas id="trendChart"></canvas>
+  </div>
+
+</section>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{url_for('static',filename='js/dashboard.js')}}"></script>
+</body>
+</html>

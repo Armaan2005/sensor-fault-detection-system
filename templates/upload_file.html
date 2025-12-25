@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wafer Fault Detection | AI System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="page">
+  <div class="card">
+
+    
+    <div class="header">
+      <h1>Wafer Fault Detection</h1>
+      <p>AI-powered quality inspection system</p>
+    </div>
+
+    
+    {% if request.args.get("status") == "success" %}
+      <p style="text-align:center;color:#22c55e;margin-bottom:12px;">
+        ✅ Prediction completed successfully
+      </p>
+    {% endif %}
+
+    
+    <form action="/predict" method="post" enctype="multipart/form-data" id="predict-form">
+
+      <label class="upload-area">
+        <input type="file" name="file" accept=".csv" required>
+        <div class="upload-content">
+          <span class="icon">📊</span>
+          <span class="text">Upload CSV file</span>
+          <span class="subtext">Only .csv files are supported</span>
+        </div>
+      </label>
+
+      <button type="submit" id="predict-btn">Run Prediction</button>
+    </form>
+
+    
+    <div class="ai-section">
+      <h3>AI Explanation Assistant</h3>
+      <textarea
+        id="ai-question"
+        placeholder="Why are these wafers classified as bad?"
+      ></textarea>
+      <button type="button" onclick="askAI()">Ask AI</button>
+      <pre id="ai-answer"></pre>
+    </div>
+
+   
+    <div style="margin-bottom: 20px; text-align: center;">
+      <a href="/dashboard">
+        <button type="button">📊 Open Dashboard</button>
+      </a>
+    </div>
+
+    
+    <div class="footer">
+      <span>Built with Machine Learning And AI Integration</span>
+    </div>
+
+  </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
+

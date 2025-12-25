@@ -4,6 +4,8 @@ import os
 import pandas as pd
 import numpy as np
 from sklearn.metrics import accuracy_score
+import json
+from datetime import datetime
 
 from xgboost import XGBClassifier
 from sklearn.svm import SVC
@@ -149,6 +151,15 @@ class ModelTrainer:
             best_model_score=accuracy_score(y_test,y_pred)
             
             print(f"best model name {best_model_name} and score : {best_model_score}")
+            model_metadata={
+                "model_name":best_model_name,
+                "accuracy":float(best_model_score),
+                "trained_on":datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+            metadata_path=os.path.join("artifacts","model_metadata.json")
+            os.makedirs(os.path.dirname(metadata_path),exist_ok=True)
+            with open(metadata_path,"w") as f:
+                json.dump(model_metadata,f,indent=4)
             
             if best_model_score<0.5:
                 raise Exception("No best model found with an accuracy greater than the threshold 0.6")

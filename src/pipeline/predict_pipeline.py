@@ -8,7 +8,11 @@ from src.exception import CustomException
 from flask import request
 from src.constant import *
 from src.utils.main_utils import MainUtils
+from src.monitoring.metrics_utils import MetricsUtils
 from dataclasses import dataclass
+import json
+from datetime import datetime
+import numpy as np
 
 @dataclass
 class PredictionPipelineConfig:
@@ -59,7 +63,23 @@ class PredictionPipeline:
             input_dataframe:pd.DataFrame=pd.read_csv(input_dataframe_path)
             input_dataframe=input_dataframe.drop(columns="Unnamed: 0") if "Unnamed: 0" in input_dataframe.columns else input_dataframe
             predictions=self.predict(input_dataframe)
-            
+            MetricsUtils.update_prediction_metrics(predictions)
+            model=self.utils.load_object(self.prediction_pipeline_config.model_file_path)
+            total_samples=len(predictions)
+            good_count=int(np.sum(predictions==1))
+            bad_count=int(np.sum(predictions==0))
+            summary={
+                    "model_name":
+                        model.__class__.__name__,
+                        "total_samples":total_samples,
+                        "good_count":good_count,
+                        "bad_count":bad_count,
+                        "generated_at":datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                
+                  }
+            os.makedirs("artifacts",exist_ok=True)
+            with open("artifacts/prediction_summary.json","w") as f:
+                    json.dump(summary,f,indent=4)
             input_dataframe[prediction_column_name]=[pred for pred in predictions]
             target_column_mapping={0:'Bad',1:'Good'}
             input_dataframe[prediction_column_name]=input_dataframe[prediction_column_name].map(target_column_mapping)

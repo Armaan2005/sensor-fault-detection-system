@@ -12,7 +12,7 @@ from src.components import *
 from src.constant import *
 from src.exception import CustomException
 from src.logger import logging
-from src.utils import main_utils
+from src.utils.main_utils import MainUtils
 from dataclasses import dataclass
 
 @dataclass
@@ -28,7 +28,7 @@ class DataTransformation:
         
         self.data_transformation_config=DataTransformationConfig()
         
-        self.utils=main_utils()
+        self.utils=MainUtils()
         
     @staticmethod
     def get_data(feature_store_file_path:str)->pd.DataFrame:
@@ -72,8 +72,8 @@ class DataTransformation:
             os.makedirs(os.path.dirname(preprocessor_path),exist_ok=True)
             
             self.utils.save_object(file_path=preprocessor_path,obj=preprocessor)
-            train_arr=np.c[X_train_scaled,np.array(y_train)]
-            test_arr=np.c[X_test_scaled,np.array(y_test)]
+            train_arr=np.c_[X_train_scaled,np.array(y_train)]
+            test_arr=np.c_[X_test_scaled,np.array(y_test)]
             
             return (train_arr,test_arr,preprocessor_path)
         except Exception as e:

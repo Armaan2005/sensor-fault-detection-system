@@ -1,0 +1,5 @@
+{
+    "model_name": "XGBClassifier",
+    "accuracy": 0.8,
+    "trained_on": "2025-12-25 22:38:08"
+}

@@ -2,7 +2,6 @@ name: workflow
 
 on:
   push:
-  workflow_dispatch:
     branches:
       -main
     paths-ignore:
@@ -18,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
       
       - name: Lint Code
         run: echo "Linting repository"

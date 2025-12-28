@@ -18,7 +18,7 @@ def get_requirements(file_path:str)->List[str]:
         if HYPEN_E_DOT in requirements:
             requirements.remove(HYPEN_E_DOT)
     return requirements
-#testing something by this line 
+#testing something by this lines
 
 setup(
     name='Fault detection',

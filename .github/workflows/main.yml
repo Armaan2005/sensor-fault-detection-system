@@ -2,10 +2,9 @@ name: workflow
 
 on:
   push:
-  workflow_dispatch:
     branches:
       -main
-    
+  workflow_dispatch: 
 
 permissions:
   id-token: write

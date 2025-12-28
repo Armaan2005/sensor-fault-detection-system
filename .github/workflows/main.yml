@@ -62,7 +62,7 @@ jobs:
         id: build-image
         env:
           IMAGE_TAG: latest
-        run:
+        run: |
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.

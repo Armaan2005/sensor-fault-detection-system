@@ -53,8 +53,8 @@ jobs:
       
       - name: Debug image name
         run: |
-          echo "ECR URI"=>'${{ secrets.AWS_ECR_REPO_URI }}'
-          echo "IMAGE_TAG=>$IMAGE_TAG"
+          echo "ECR URI => ${{ secrets.AWS_ECR_REPO_URI }}"
+          echo "IMAGE_TAG => $IMAGE_TAG"
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image

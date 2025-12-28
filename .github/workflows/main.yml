@@ -52,6 +52,8 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
       
       - name: Debug image name
+        env:
+          IMAGE_TAG: latest
         run: |
           echo "ECR URI => ${{ secrets.AWS_ECR_REPO_URI }}"
           echo "IMAGE_TAG => $IMAGE_TAG"

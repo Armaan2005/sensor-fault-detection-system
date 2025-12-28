@@ -8,8 +8,8 @@ on:
       -'README.md'
 
 permissions:
-  id_token:write
-  contents:README
+  id_token: write
+  contents: README
 
 jobs:
   integration:

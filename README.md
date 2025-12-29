@@ -95,99 +95,176 @@ The goal is to:
 
 
 ### ⚙️ ML Pipeline Explanation
+
 1️⃣ Data Ingestion
-Data fetched from MongoDB Atlas
-Raw sensor data exported as CSV
-Stored inside artifacts/
+
+  • Data fetched from MongoDB Atlas
+  
+  • Raw sensor data exported as CSV
+  
+  • Stored inside artifacts/
+  
 2️⃣ Data Transformation
-Missing value handling
-Scaling using RobustScaler
-Train-test split
-Preprocessor saved as .pkl
+
+  • Missing value handling
+  
+  • Scaling using RobustScaler
+  
+  • Train-test split
+  
+  • Preprocessor saved as .pkl
+  
 3️⃣ Model Training
-Multiple models evaluated:
-XGBoost
-Random Forest
-Gradient Boosting
-SVM
-Best model selected using validation accuracy
-Hyperparameter tuning using GridSearchCV
+
+  • Multiple models evaluated:
+  
+  • XGBoost
+  
+  • Random Forest
+  
+  • Gradient Boosting
+  
+  • SVM
+  
+  • Best model selected using validation accuracy
+  
+  • Hyperparameter tuning using GridSearchCV
+  
 4️⃣ Prediction Pipeline
-Batch CSV upload
-Preprocessor + model loaded
-Predictions generated
-Output CSV downloaded
-Metrics updated for dashboard
+
+ • Batch CSV upload
+
+ • Preprocessor + model loaded
+
+ • Predictions generated
+
+ • Output CSV downloaded
+
+ • Metrics updated for dashboard
 
 ### 📊 Monitoring Dashboard
-• The dashboard provides real-time ML monitoring, including:
-• Total predictions
-• Good vs Bad wafer count
-• Health score (% Good wafers)
-• Risk indicator bar
-• Trend analysis charts
-• Model name visibility
+
+ • The dashboard provides real-time ML monitoring, including:
+ 
+ • Total predictions
+ 
+ • Good vs Bad wafer count
+ 
+ • Health score (% Good wafers)
+ 
+ • Risk indicator bar
+ 
+ • Trend analysis charts
+ 
+ • Model name visibility
+ 
 📌 Metrics are batch-wise (non-cumulative) for consistency..
 
 
 ### 🤖 AI Explainability (Groq LLM)
-• An AI assistant is integrated to explain prediction results.
-• LLM Provider: Groq
-• Model Used: llama-3.1-70b-versatile
-• Explains:
+
+ • An AI assistant is integrated to explain prediction results.
+ 
+ • LLM Provider: Groq
+ 
+ • Model Used: llama-3.1-70b-versatile
+ 
+ • Explains:
+ 
  • Why wafers are classified as bad
+ 
  • Overall quality insights
+ 
  • Engineering-friendly explanations
+ 
 📌 AI runs independently of ML predictions (no hallucination).
 
 
 ### ☁️ Deployment & CI/CD
+
 ## 🐳 Docker
-• Complete application containerized
-• Same behavior across environments
+
+ • Complete application containerized
+ 
+ • Same behavior across environments
+ 
 ## 🔁 CI/CD Pipeline (GitHub Actions)
-• Triggered on every push
-• Steps:
-   Build Docker image
-   Push to AWS ECR
-   Deploy to AWS EC2 using self-hosted runner
+
+ • Triggered on every push
+ 
+ • Steps:
+ 
+ • Build Docker image
+   
+ • Push to AWS ECR
+   
+ • Deploy to AWS EC2 using self-hosted runner
+ 
 ## ☁️ AWS
-• EC2 (Ubuntu) as production server
-• ECR for Docker image registry
-• App exposed via public IP
+
+ • EC2 (Ubuntu) as production server
+ 
+ • ECR for Docker image registry
+ 
+ • App exposed via public IP
 
 ### ▶️ How to Run Locally
+
 Copy code
+
 Bash
+
 # Clone repository
+
 git clone <repo-url>
+
 cd wafer-fault-detection
 
 # Create virtual environment
+
 python -m venv venv
+
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # Install dependencies
+
 pip install -r requirements.txt
 
 # Run app
+
 python app.py
+
 🧪 How to Use
+
 Open home page
+
 Click Train Model
+
 Upload CSV file for prediction
+
 Download prediction results
+
 Open Dashboard
+
 Ask AI for explanation
+
 🧠 Key Engineering Learnings
+
 Built a full ML system, not just a model
+
 Solved real-world bugs (metrics inflation, AI config issues)
+
 Designed modular, scalable architecture
+
 Integrated AI explainability
+
 Implemented CI/CD & cloud deployment
 
 🙌 Author
+
 Armaan Joshi
+
 Aspiring Data Scientist | Machine Learning | Computer Vision | MLOps
+
 📌 This project demonstrates industry-level ML engineering practices.
 

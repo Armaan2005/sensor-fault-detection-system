@@ -39,16 +39,16 @@ The goal is to:
 ## 🏗️ System Architecture
 
 ### Data Ingestion
-![Data Ingestion Architecture](images/Data Ingestion.png)
+![Data Ingestion Architecture](<images/Data Ingestion.png>)
 
 ### Data Transformation
-![Data Transformation Architecture](images/Data Transformation.png)
+![Data Transformation Architecture](<images/Data Transformation.png>)
 
 ### Model Training
-![Model Training Architecture](images/Model Trainer.png)
+![Model Training Architecture](<images/Model Trainer.png>)
 
 ### Prediction Pipeline
-![Data Transformation Architecture](images/Prediction Pipeline.png)
+![Data Transformation Architecture](<images/Prediction Pipeline.png>)
 
 ├── src
 │   ├── components

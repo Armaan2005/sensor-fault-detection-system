@@ -42,13 +42,13 @@ The goal is to:
 ![Data Ingestion Architecture](images/Data%20Ingestion.jpg)
 
 ### Data Transformation
-![Data Transformation Architecture](<images/Data Transformation.png>)
+![Data Transformation Architecture](<images/Data Transformation.jpg>)
 
 ### Model Training
-![Model Training Architecture](<images/Model Trainer.png>)
+![Model Training Architecture](<images/Model Trainer.jpg>)
 
 ### Prediction Pipeline
-![Data Transformation Architecture](<images/Prediction Pipeline.png>)
+![Data Transformation Architecture](<images/Prediction Pipeline.jpg>)
 
 ├── src
 │   ├── components

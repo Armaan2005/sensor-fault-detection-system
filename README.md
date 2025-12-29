@@ -94,7 +94,7 @@ The goal is to:
 
 
 
-⚙️ ML Pipeline Explanation
+### ⚙️ ML Pipeline Explanation
 1️⃣ Data Ingestion
 Data fetched from MongoDB Atlas
 Raw sensor data exported as CSV
@@ -118,7 +118,8 @@ Preprocessor + model loaded
 Predictions generated
 Output CSV downloaded
 Metrics updated for dashboard
-📊 Monitoring Dashboard
+
+### 📊 Monitoring Dashboard
 The dashboard provides real-time ML monitoring, including:
 Total predictions
 Good vs Bad wafer count
@@ -126,7 +127,7 @@ Health score (% Good wafers)
 Risk indicator bar
 Trend analysis charts
 Model name visibility
-📌 Metrics are batch-wise (non-cumulative) for consistency.
+### 📌 Metrics are batch-wise (non-cumulative) for consistency.
 🤖 AI Explainability (Groq LLM)
 An AI assistant is integrated to explain prediction results.
 LLM Provider: Groq
@@ -135,7 +136,8 @@ Explains:
 Why wafers are classified as bad
 Overall quality insights
 Engineering-friendly explanations
-📌 AI runs independently of ML predictions (no hallucination).
+
+### 📌 AI runs independently of ML predictions (no hallucination).
 ☁️ Deployment & CI/CD
 🐳 Docker
 Complete application containerized
@@ -153,6 +155,8 @@ App exposed via public IP
 ▶️ How to Run Locally
 Copy code
 Bash
+
+
 # Clone repository
 git clone <repo-url>
 cd wafer-fault-detection

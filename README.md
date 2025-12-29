@@ -120,43 +120,45 @@ Output CSV downloaded
 Metrics updated for dashboard
 
 ### 📊 Monitoring Dashboard
-The dashboard provides real-time ML monitoring, including:
-Total predictions
-Good vs Bad wafer count
-Health score (% Good wafers)
-Risk indicator bar
-Trend analysis charts
-Model name visibility
-### 📌 Metrics are batch-wise (non-cumulative) for consistency.
-🤖 AI Explainability (Groq LLM)
-An AI assistant is integrated to explain prediction results.
-LLM Provider: Groq
-Model Used: llama-3.1-70b-versatile
-Explains:
-Why wafers are classified as bad
-Overall quality insights
-Engineering-friendly explanations
+• The dashboard provides real-time ML monitoring, including:
+• Total predictions
+• Good vs Bad wafer count
+• Health score (% Good wafers)
+• Risk indicator bar
+• Trend analysis charts
+• Model name visibility
+📌 Metrics are batch-wise (non-cumulative) for consistency..
 
-### 📌 AI runs independently of ML predictions (no hallucination).
-☁️ Deployment & CI/CD
-🐳 Docker
-Complete application containerized
-Same behavior across environments
-🔁 CI/CD Pipeline (GitHub Actions)
-Triggered on every push
-Steps:
-Build Docker image
-Push to AWS ECR
-Deploy to AWS EC2 using self-hosted runner
-☁️ AWS
-EC2 (Ubuntu) as production server
-ECR for Docker image registry
-App exposed via public IP
-▶️ How to Run Locally
+
+### 🤖 AI Explainability (Groq LLM)
+• An AI assistant is integrated to explain prediction results.
+• LLM Provider: Groq
+• Model Used: llama-3.1-70b-versatile
+• Explains:
+ • Why wafers are classified as bad
+ • Overall quality insights
+ • Engineering-friendly explanations
+📌 AI runs independently of ML predictions (no hallucination).
+
+
+### ☁️ Deployment & CI/CD
+## 🐳 Docker
+• Complete application containerized
+• Same behavior across environments
+## 🔁 CI/CD Pipeline (GitHub Actions)
+• Triggered on every push
+• Steps:
+   Build Docker image
+   Push to AWS ECR
+   Deploy to AWS EC2 using self-hosted runner
+## ☁️ AWS
+• EC2 (Ubuntu) as production server
+• ECR for Docker image registry
+• App exposed via public IP
+
+### ▶️ How to Run Locally
 Copy code
 Bash
-
-
 # Clone repository
 git clone <repo-url>
 cd wafer-fault-detection

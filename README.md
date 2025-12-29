@@ -39,7 +39,7 @@ The goal is to:
 ## 🏗️ System Architecture
 
 ### Data Ingestion
-![Data Ingestion Architecture](<images/Data Ingestion.png>)
+![Data Ingestion Architecture](images/Data%20Ingestion.png)
 
 ### Data Transformation
 ![Data Transformation Architecture](<images/Data Transformation.png>)

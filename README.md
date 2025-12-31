@@ -50,6 +50,10 @@ The goal is to:
 ### Prediction Pipeline
 ![Data Transformation Architecture](<images/Prediction Pipeline.jpg>)
 
+
+### 🗂️ Project Structure
+
+```
 ├── src
 │   ├── components
 │   │   ├── data_ingestion.py
@@ -91,7 +95,7 @@ The goal is to:
 ├── requirements.txt
 ├── app.py
 ├── README.md
-
+```
 
 
 ### ⚙️ ML Pipeline Explanation

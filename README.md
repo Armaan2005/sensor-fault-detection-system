@@ -54,47 +54,62 @@ The goal is to:
 ### 🗂️ Project Structure
 
 ```
-├── src
-│   ├── components
+wafer-fault-detection-system/
+│
+├── src/
+│   ├── components/
 │   │   ├── data_ingestion.py
 │   │   ├── data_transformation.py
-│   │   ├── model_trainer.py
+│   │   └── model_trainer.py
 │   │
-│   ├── pipeline
+│   ├── pipeline/
 │   │   ├── train_pipeline.py
-│   │   ├── predict_pipeline.py
+│   │   └── predict_pipeline.py
 │   │
-│   ├── monitoring
+│   ├── monitoring/
 │   │   └── metrics_utils.py
 │   │
-│   ├── ai
+│   ├── ai/
 │   │   └── groq_assistant.py
 │   │
-│   ├── utils
+│   ├── utils/
 │   │   └── main_utils.py
 │   │
 │   ├── exception.py
-│   ├── logger.py
+│   └── logger.py
 │
-├── artifacts
+├── artifacts/
 │   ├── model.pkl
 │   ├── preprocessor.pkl
-│   └── metrics
+│   └── metrics/
 │       └── prediction_metrics.json
 │
-├── templates
+├── notebooks/
+│   ├── in_1_exploratory_analysis.ipynb
+│   └── wafer_23012020_041211.csv
+│
+├── templates/
 │   ├── home.html
 │   ├── upload_file.html
-│   ├── dashboard.html
+│   ├── train_success.html
+│   └── dashboard.html
 │
-├── static
-│   ├── css
-│   └── js
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   └── js/
+│       ├── dashboard.js
+│       └── main.js
+│
+├── .github/
+│   └── workflows/
+│       └── main.yml
 │
 ├── Dockerfile
 ├── requirements.txt
 ├── app.py
-├── README.md
+└── README.md
 ```
 
 
